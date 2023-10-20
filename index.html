@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Modal</title>
+    <link rel="stylesheet" href="styles.css">
+   
+</head>
+<body>       
+
+    <div class="w-screen h-screen flex justify-center items-center wrapper">
+
+        <!--circle1-->
+        <div class="fixed top-[10%] left-[35%] w-52 h-52 rounded-full shadow-[0_0_50px_#d84869] bg-gradient-to-r from-pink1 to-orange1 animate-circle1animate circle1"></div>
+
+        <!--circle2-->
+        <div class="fixed bottom-[5%] right-[30%] w-[16em] h-[16em] rounded-full shadow-[0_0_50px_#5648d8] bg-gradient-to-r from-blue1 to-violet1 animate-circle2animate circle2"></div>
+
+        <div class="relative h-[500px] border-solid border-2 border-borderColor flex flex-col items-center justify-evenly bg-transparentWhite backdrop-blur-15 text-[#ffffff] rounded-[15px] px-[50px] py-[20px] z-10 w-[350px] sml:w-max card-wrapper">
+            <div>
+                <img src="user1.jpeg" alt="user" class="sml:w-[150px] w-[130px] sml:h-[150px] h-[130px] rounded-full border-solid border-0.5 border-[#ffffff30]">
+            </div>
+            <div class="user-name">
+                <h2 class="text-[2rem] text-center">Roushan Shah</h2>
+            </div>
+            <div class="designation">
+                <h3 class="text-center text-[#ffffff85]">CGC, Landran</h3>
+            </div>
+            <div class="flex sml:flex-row flex-col gap-2.5 bottom-group">
+                <button onclick="openModal()" class="flex justify-center items-center gap-[7px] px-[10px] py-[7px] bg-transparentWhite2 border-solid border-2 border-[#ffffffb9] capitalize rounded text-[#ffffffb9] cursor-pointer transition-all duration-500 hover:bg-[#ffffffb9] hover:text-[#131313] btn-share btn-card" id="share-btn">
+                    <i class="fa-solid fa-share"></i>
+                    <div>Share my profile</div>
+                </button>
+    
+                <button onclick="openModal()" class="capitalize px-[10px] py-[7px] sml:w-[150px] w-[180px] bg-transparentWhite2 border-solid border-2 border-[#ffffffb9] rounded text-[#ffffffb9] cursor-pointer transition-all duration-500 hover:bg-[#ffffffb9] hover:text-[#131313] btn-follow btn-card" id="follow-btn">Follow me</button>
+            </div>
+        </div>
+    </div>
+
+    <!--modal component-->
+<div class="w-screen">   
+
+    <!--share modal starts-->
+    <div class="sml:w-[500px] xsm:w-[350px] w-[250px] fixed top-1/2 right-1/2 transform translate-x-1/2 -translate-y-1/2 border-solid border-2 border-[#ffffff59] bg-[#00000088] backdrop-blur-[10px] text-white px-[25px] py-[20px] rounded-[20px] transition-ease-in-out duration-500 z-30 share-modal" id="share-modal">
+
+        <!--modal header-->
+        <div class="flex mb-5 justify-between items-center pb-3 border-b border-b-solid border-b-[#ffffff88] modal-header">
+            <h1 class="sml:text-[2em] xsm:text-[1.5em] text-[1em] font-bold">Share My Profile</h1>
+            <div>
+                <i onclick="closeModal()" class="sml:text-[30px] xsm:text-[24px] text-[18px] cursor-pointer fa-solid fa-xmark close" id="share-close-btn"></i>
+            </div>
+        </div>
+
+        <!--modal body-->
+        <div>
+            <h3 class="text-[1.17em] font-bold">Share this via</h3>
+            <div class="mt-5 flex justify-between items-center flex-wrap gap-x-4 icon-container">
+
+                <a href="#" class="w-[55px] h-[55px] p-[15px] mb-[25px] rounded-full flex justify-center items-center my-[10px] gap-2.5 text-[#1771e6] border-2 border-solid border-[#1771e6] transtion-all duration-500 hover:bg-[#1771e6] hover:text-[#fff]  icon" id="facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://twitter.com/Roushanshah8?s=08" class="w-[55px] h-[55px] p-[19px] mb-[25px] rounded-full flex justify-center items-center my-[10px] gap-2.5 text-[#fff] border border-solid border-[#000] transtion-all duration-500 hover:bg-[#dae0db] hover:text-[#000] icon" id="twitter">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="#" class="w-[55px] h-[55px] p-[15px] mb-[25px] rounded-full flex justify-center items-center my-[10px] gap-2.5 text-[#cb2770] border border-solid border-[#cb2770] transtion-all duration-500 hover:bg-[#cb2770] hover:text-[#fff] icon" id="instagram">
+                    <i class="text-[27px] fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" class="w-[55px] h-[55px] p-[15px] mb-[25px] rounded-full flex justify-center items-center my-[10px] gap-2.5 text-[#2fe664] border border-solid border-[#2fe664] transtion-all duration-500 hover:bg-[#2fe664] hover:text-[#fff] icon" id="whatsapp">
+                    <i class="text-[27px] fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="#" class="w-[55px] h-[55px] p-[13px] mb-[25px] rounded-full flex justify-center items-center my-[10px] gap-2.5 text-[#0081c2] border border-solid border-[#0081c2] transtion-all duration-500 hover:bg-[#0081c2] hover:text-[#fff] icon" id="telegram">
+                    <i class="text-[27px] fa-brands fa-telegram"></i>
+                </a>
+    
+            </div>
+        </div>
+    </div>
+
+    <!--follow modal starts-->
+    <div class="sml:w-[500px] xsm:w-[350px] w-[250px] fixed top-1/2 right-1/2 transform translate-x-1/2 -translate-y-1/2 border-solid border-2 border-[#ffffff59] bg-[#00000088] backdrop-blur-[10px] text-white px-[25px] py-[20px] rounded-[20px] transition-ease-in-out duration-500 z-30 follow-modal" id="follow-modal">
+        <div class="flex mb-5 justify-between items-center pb-3 border-b border-b-solid border-b-[#ffffff88] modal-header">
+            <h2 class="sml:text-[2em] xsm:text-[1.5em] text-[1em] font-bold">Github Profile</h2>
+            <div>
+                <i onclick="closeModal()" class="sml:text-[30px] xsm:text-[24px] text-[18px] cursor-pointer fa-solid fa-xmark close" id="follow-close-btn"></i>
+            </div>
+        </div>
+        <!--modal body-->
+        <div>
+            <h3 class="text-[1.17em] font-bold">Check My Repositories</h3>
+            <div class="mt-5 flex justify-between items-center flex-wrap gap-x-4 icon-container">
+                <a href="https://github.com/Roushanshah?tab=repositories" class="w-[65px] h-[65px] p-[10px] mb-[25px] rounded-full flex justify-center items-center my-[10px] gap-2.5 text-[#dae0db] border border-solid border-[#dae0db] transtion-all duration-500 hover:bg-[#dae0db] hover:text-[#000] icon" id="github">
+                    <i class="text-[27px] fa-brands fa-github"></i>
+                </a>
+                <a href="https://github.com/Roushanshah" class="w-[10rem] bg-[#09b43a] px-1 py-1 border-solid border-2 border-[#fff] rounded-[10px] text-center text-[1.2rem] hover:bg-[#2ade5e]">Follow</a>
+            </div>
+        </div>
+    </div>
+</div>     
+
+    <!--overlay-->
+    <div onclick="closeModal()" class="overlay" id="overlay"></div>
+
+    <script src="https://kit.fontawesome.com/4cecbf5b9f.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+</html>
